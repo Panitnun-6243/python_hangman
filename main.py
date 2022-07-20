@@ -3,6 +3,7 @@ import hangman_art as art
 import random
 penalty_limit_point = 7
 num_incorrect_word = 0
+art_stages = 6
 random_num = random.randint(0,212)
 chosen_word = words.word_list[random_num]
 chosen_word_list = list(chosen_word)
@@ -20,9 +21,14 @@ while num_incorrect_word < penalty_limit_point and len(chosen_word_list) > 0:
       num_right_guess += 1
       if num_right_guess > 0:
         chosen_word_list.remove(guess_letter)
-        print(chosen_word_list)
       
   if num_right_guess == 0:
+    print()
+    print("- "*20)
+    print(f"You guess {guess_letter}, that's not in the word. You lose a life.")
+    
+    print(art.stages[art_stages])
+    art_stages -= 1
     num_incorrect_word += 1
 if len(chosen_word_list) == 0:
   print('You win!')
