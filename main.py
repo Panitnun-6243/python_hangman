@@ -35,10 +35,12 @@ while not game_is_finished:
         lives -= 1
         if lives == 0:
             game_is_finished = True
-            print("You lose.")
+            print()
+            print("You lose!")
     
     if not "_" in display:
         game_is_finished = True
-        print("You win.")
+        print()
+        print("You win!")
 
     print(stages[lives])
