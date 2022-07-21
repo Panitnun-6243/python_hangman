@@ -2,7 +2,6 @@ import random
 from hangman_art import stages, logo
 from hangman_words import word_list
 
-
 print(logo)
 game_is_finished = False
 lives = len(stages) - 1
@@ -16,9 +15,6 @@ for _ in range(word_length):
 
 while not game_is_finished:
     guess = input("Guess a letter: ").lower()
-
-    #Use the clear() function imported from replit to clear the output between guesses.
-  
 
     if guess in display:
         print(f"You've already guessed {guess}")
@@ -35,6 +31,8 @@ while not game_is_finished:
         lives -= 1
         if lives == 0:
             game_is_finished = True
+            print()
+            print(f"The word answer is {chosen_word}")
             print()
             print("You lose!")
     
